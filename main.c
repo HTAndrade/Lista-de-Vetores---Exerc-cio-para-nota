@@ -1,4 +1,7 @@
-#define ex8
+/*Nome: Hugo Tomaz dos Santos Andrade
+  RA: 0050482021021*/
+
+#define ex1
 
 #include <stdio.h>
 
