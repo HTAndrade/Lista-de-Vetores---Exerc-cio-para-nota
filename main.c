@@ -4,13 +4,17 @@
 #define ex1
 
 #include <stdio.h>
+#include <locale.h>
+
 
 #ifdef ex1
 
-/*1.	Leia um vetor de 6 posições. Exiba a quantidade de valores pares que estão armazenados no vetor. 
+/*1.	Leia um vetor de 6 posições. Exiba a quantidade de valores pares que estão armazenados no vetor.
 Exiba também a posição e o respectivo par. Informe ao usuário caso não tenha sido digitado nenhum número par no vetor.*/
 
+
 int vetA[6];
+
 
 int funcaovetA(){
 
@@ -33,13 +37,14 @@ int funcaovetA(){
       for(x = 1; x <= 6; x++){
         if(vetA[x] % 2 ==0){
           printf("%dª Posição: %d é par.\n", x, vetA[x]);
-        }      
-      } 
+        }
+      }
     }
-  
+
 return 0;
 }
 int main() {
+  setlocale(LC_ALL, "Portuguese");
   funcaovetA();
 }
 
@@ -49,10 +54,10 @@ int main() {
 
 #ifdef ex2
 
-/*2.	Ler um conjunto de 6 números reais, armazenando-o no vetor A. Calcular o quadrado das componentes deste vetor, 
-armazenando o resultado no vetor B. Exiba os dois vetores. 
-Exemplo: Suponha que você tenha digitado 2 na posição zero do vetor A no vetor B na mesma posição será o valor de A[0] ao quadrado. 
-A[0]=2 e B[0]= 4  e assim sucessivamente. 
+/*2.	Ler um conjunto de 6 números reais, armazenando-o no vetor A. Calcular o quadrado das componentes deste vetor,
+armazenando o resultado no vetor B. Exiba os dois vetores.
+Exemplo: Suponha que você tenha digitado 2 na posição zero do vetor A no vetor B na mesma posição será o valor de A[0] ao quadrado.
+A[0]=2 e B[0]= 4  e assim sucessivamente.
 */
 
 float vetA[6];
@@ -77,6 +82,7 @@ return 0;
 }
 
 int main() {
+  setlocale(LC_ALL, "Portuguese");
   funcaovetAeB();
 
 }
@@ -87,14 +93,14 @@ int main() {
 
 #ifdef ex3
 
-/*3.	Leia a nota da prova de 15 alunos e armazene num vetor, calcule e imprima a média geral. 
+/*3.	Leia a nota da prova de 15 alunos e armazene num vetor, calcule e imprima a média geral.
 As notas devem ser maiores ou iguais a zero e menores ou iguais a 10.*/
 
 float notas[15];
 
 int media(){
   int x;
-  float n = 0; //Somador das notas 
+  float n = 0; //Somador das notas
   float m; //Média das notas
 
   printf("Ex.3: Digite as 15 notas da prova até preencher todo o vetor.\n");
@@ -121,6 +127,7 @@ return 0;
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   media();
 
 }
@@ -132,18 +139,18 @@ int main(){
 
 #ifdef ex4
 
-/*4.	Leia três vetores (A, B e C) de uma dimensão com 5 elementos cada. 
+/*4.	Leia três vetores (A, B e C) de uma dimensão com 5 elementos cada.
 Construa o vetor D, sendo este a junção dos três outros vetores. Armazene no vetor D o primeiro elemento do
-vetor A depois do B e do C e assim sucessivamente.  Apresentar o conteúdo de todos os vetores. 
+vetor A depois do B e do C e assim sucessivamente.  Apresentar o conteúdo de todos os vetores.
 Exiba quantas vezes apareceram números negativos no vetor D.*/
 
 int vetA[5], vetB[5], vetC[5], vetD[15];
 int contn = 0; //Contador de números negativos
 
 int vetorA(){
-  
+
   int x;
-  
+
   printf("Ex.4: Digite 5 números para alimentar o vetor A de 5 posíções.\n");
 
   for(x = 0; x < 5; x++){
@@ -154,7 +161,7 @@ int vetorA(){
 
 int vetorB(){
   int x;
-  
+
   printf("\nDigite 5 números para alimentar o vetor B de 5 posíções.\n");
 
   for(x = 0; x < 5; x++){
@@ -165,7 +172,7 @@ int vetorB(){
 
 int vetorC(){
   int x;
-  
+
   printf("\nDigite 5 números para alimentar o vetor C de 5 posíções.\n");
 
   for(x = 0; x < 5; x++){
@@ -177,7 +184,7 @@ int vetorC(){
 int vetorD(){
 
   int x;
-  
+
   vetD[0]  = vetA[0];
   vetD[1]  = vetB[0];
   vetD[2]  = vetC[0];
@@ -200,13 +207,13 @@ int vetorD(){
     }
   }
 
-  
+
   return 0;
 }
 
 int resultado(){
   int x;
-  
+
   printf("\nVetor A:\n");
   for(x = 0; x < 5; x++){
     printf("A[%d] = %d\n", x, vetA[x]);
@@ -237,6 +244,7 @@ int resultado(){
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   vetorA();
   vetorB();
   vetorC();
@@ -250,8 +258,8 @@ int main(){
 
 #ifdef ex5
 
-/*5.	Receba do usuário um vetor com 10 posições. Em seguida deverá ser impresso o maior e o menor elemento do vetor. 
-Exiba em que posições apareceu o maior número e em que posições apareceu o menor número. 
+/*5.	Receba do usuário um vetor com 10 posições. Em seguida deverá ser impresso o maior e o menor elemento do vetor.
+Exiba em que posições apareceu o maior número e em que posições apareceu o menor número.
 Se todos os números armazenados no vetor forem iguais informe ao usuário.*/
 
 int vet[10];
@@ -263,7 +271,7 @@ int vetor(){
 
   for(x = 0; x < 10; x++){
     scanf("%d", &vet[x]);
-  } 
+  }
 
   return 0;
 }
@@ -285,7 +293,7 @@ int maiornum(){
 
 int menornum(){
   int x;
-  int n = 0;//Responsavel por quardar o menor número
+  int n;//Responsável por quardar o menor número
 
   for(x = 0; x < 10; x++){
     if(vet[x] < n){
@@ -299,6 +307,7 @@ int menornum(){
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   vetor();
   maiornum();
   menornum();
@@ -336,9 +345,10 @@ int vetorInverso(){
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   vetor();
   vetorInverso();
- 
+
 }
 
 #endif
@@ -347,11 +357,11 @@ int main(){
 
 #ifdef ex7
 
-/*7.	Leia o vetor A tipo vetor com 10 elementos positivos. Construa o vetor B de mesmo tipo, 
-e cada elemento de B deve ser a metade de cada elemento de A. 
+/*7.	Leia o vetor A tipo vetor com 10 elementos positivos. Construa o vetor B de mesmo tipo,
+e cada elemento de B deve ser a metade de cada elemento de A.
 Exiba em que Vetor e em que posições apareceram valores superiores a 4. */
 
-float vetA[10]; 
+float vetA[10];
 float vetB[10];
 
 
@@ -379,7 +389,7 @@ int vetorB(){
   int x;
 
   printf("\nElementos do Vetor B:\n");
-  
+
   for(x = 0; x < 10; x++){
     printf("%.1f ", vetB[x]);
   }
@@ -391,14 +401,14 @@ int maiorQue4A(){
   int x;
   printf("\n\nMaior que 4 no Vetor A:\n");
   for(x = 0; x < 10; x++){
-    if(vetA[x] >= 4){  
+    if(vetA[x] >= 4){
       printf("A[%d] = %.1f\n", x, vetA[x]);
     }
   }
 
     printf("\n\nMaior que 4 no Vetor B:\n");
   for(x = 0; x < 10; x++){
-    if(vetB[x] >= 4){  
+    if(vetB[x] >= 4){
       printf("B[%d] = %.1f\n", x, vetB[x]);
     }
   }
@@ -407,6 +417,7 @@ int maiorQue4A(){
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   vetorA();
   vetorB();
   maiorQue4A();
@@ -419,8 +430,8 @@ int main(){
 #ifdef ex8
 
 /*8.	Efetue a leitura de dez elementos para o vetor A. Construa o vetor B, observando a seguinte lei de formação:
-se o valor do índice do vetor for par, o valor do elemento correspondente do vetor A deve ser multiplicado pelo valor 5; 
-sendo o índice ímpar, o valor do elemento correspondente do vetor A deverá ser somado ao valor existente o valor 5. 
+se o valor do índice do vetor for par, o valor do elemento correspondente do vetor A deve ser multiplicado pelo valor 5;
+sendo o índice ímpar, o valor do elemento correspondente do vetor A deverá ser somado ao valor existente o valor 5.
 Mostre o conteúdo dos dois vetores.*/
 
 int vetA[10], vetB[10];
@@ -435,7 +446,7 @@ int vetorA(){
     scanf("%d", &vetA[x]);
   }
   printf("\nElementos do Vetor A:\n");
-  
+
   for(x = 0; x < 10; x++){
     printf("%d ", vetA[x]);
   }
@@ -462,6 +473,7 @@ int vetorB(){
 }
 
 int main(){
+  setlocale(LC_ALL, "Portuguese");
   vetorA();
   vetorB();
 
